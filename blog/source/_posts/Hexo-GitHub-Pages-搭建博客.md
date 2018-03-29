@@ -3,13 +3,12 @@ title: Hexo + GitHub Pages 搭建博客
 date: 2018-03-29 10:56:09
 tags:
 ---
-#  Hexo + GitHub Pages 搭建博客
 
 ------
 
 大概流程：
 
-[TOC]
+	[TOC]
 
 个人博客地址：[一个拖延症患者的自我救赎](http://tlight.site)
 
