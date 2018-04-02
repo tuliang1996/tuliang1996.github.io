@@ -3,17 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
+title: 自言自语
+subtitle: 一个拖延症患者的自我救赎
+description: 救救自己。
+keywords: 
+author: 涂亮
+language: zh-Hans
+timezone: Asia/shanghai
+avatar: http://p6bx8q1l3.bkt.clouddn.com//18-4-2/51522892.jpg
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://tlight.site
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,7 +74,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
