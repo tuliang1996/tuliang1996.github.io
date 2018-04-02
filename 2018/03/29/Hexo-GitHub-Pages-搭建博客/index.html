@@ -87,7 +87,7 @@
 <meta property="og:description" content="大概流程：  搭建 Node.js 环境 搭建 Git 环境 GitHub配置 安装配置 Hexo  个人博客地址：一个拖延症患者的自我救赎">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://p6bx8q1l3.bkt.clouddn.com//18-3-29/96111296.jpg">
-<meta property="og:updated_time" content="2018-04-02T07:12:09.926Z">
+<meta property="og:updated_time" content="2018-04-02T07:34:50.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo + GitHub Pages 搭建博客">
 <meta name="twitter:description" content="大概流程：  搭建 Node.js 环境 搭建 Git 环境 GitHub配置 安装配置 Hexo  个人博客地址：一个拖延症患者的自我救赎">
@@ -450,6 +450,28 @@ hexo d
 <p>是因为没有设置好 public key 所致，重新详细设置即可。</p>
 <p>3 .md文件因为hexo的执行而被解析成html，但github通常建议附上README.md说明文件，如何保留README.md</p>
 <p>Hexo原理就是hexo在执行hexo generate时会在本地先把博客生成的一套静态站点放到public文件夹中，在执行<code>hexo deploy</code>时将其复制到.deploy_git文件夹中。所以，在执行<code>hexo deploy</code>前把在本地写好的README.md文件复制到.deploy_git文件夹中，再去执行<code>hexo deploy</code>即可。</p>
+<h3 id="6-GitHub-Pages-地址解析到个人域名"><a href="#6-GitHub-Pages-地址解析到个人域名" class="headerlink" title="6 GitHub Pages 地址解析到个人域名"></a>6 GitHub Pages 地址解析到个人域名</h3><blockquote>
+<p>Github Pages 是面向用户、组织和项目开放的公共静态页面搭建托管服务，站点可以被免费托管在 Github 上（有300M的免费空间），你可以选择使用 Github Pages 默认提供的域名 github.io 或者自定义域名来发布站点。</p>
+</blockquote>
+<p>如果你觉得这个二级域名不够个性，想拥有一个属于自己的域名，你可以通过以下方法来实现。</p>
+<p>首先你需要在阿里云或腾讯云等等购买一个域名，首年是很便宜的。</p>
+<p>然后，在本地博客存储根目录下的<code>source</code>文件夹内创建名为<code>CNAME</code>的文件，你可以创建一个文本文档，然后改名为<code>CNAME</code>即可，注意同时删去它的后缀。用记事本或其他编辑器打开它，输入你的域名，不能加<code>http://</code>或<code>https://</code>。</p>
+<p>以阿里云购买的为例，进入<a href="https://dc.console.aliyun.com/dns/" target="_blank" rel="noopener">域名解析控制台</a>，解析控制，添加解析<br>！<a href="http://p6bx8q1l3.bkt.clouddn.com//18-4-2/52401210.jpg" target="_blank" rel="noopener">alt 阿里云添加解析</a></p>
+<ol>
+<li>记录类型选择CNAME</li>
+<li>主机记录填www</li>
+<li>解析线路选择默认</li>
+<li>记录值填yourname.github.io</li>
+<li>TTL值为10分钟</li>
+<li>再添加一个解析，记录类型A</li>
+<li>主机记录填@</li>
+<li>解析线路选择默认</li>
+<li><p>记录值填你 GitHub 的ip地址（在命令提示符中<code>ping</code>：）</p>
+<p>ping tuliang1996.github.io</p>
+</li>
+</ol>
+<p>！<a href="http://p6bx8q1l3.bkt.clouddn.com//18-4-2/81948236.jpg" target="_blank" rel="noopener">alt 阿里云域名绑定</a></p>
+<p>保存后，当你输入你所购买的域名（我的<code>tlight.site</code>)，或者GitHub Pages中的<code>github.io</code>域名（我的<code>tuliang1996.github.io</code>）均会跳转到<code>tlight.site</code>。相当于一个重定向的过程。（如果失败可以稍等几分钟之后重试）</p>
 
       
     </div>
@@ -596,7 +618,7 @@ hexo d
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-搭建-Node-js-环境"><span class="nav-number">1.</span> <span class="nav-text">1. 搭建 Node.js 环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-搭建-Git-环境"><span class="nav-number">2.</span> <span class="nav-text">2. 搭建 Git 环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-GitHub配置"><span class="nav-number">3.</span> <span class="nav-text">3. GitHub配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-安装配置-Hexo"><span class="nav-number">4.</span> <span class="nav-text">4. 安装配置 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Notice"><span class="nav-number">4.1.</span> <span class="nav-text">Notice</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-关联-Hexo-与-GitHub-Pages"><span class="nav-number">5.</span> <span class="nav-text">5. 关联 Hexo 与 GitHub Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-生成SSH-keys"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 生成SSH keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-添加-SSH-Key-到-GitHub"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 添加 SSH Key 到 GitHub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-配置Git个人信息及本地Deployment"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 配置Git个人信息及本地Deployment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-提交修改到-GitHub-Pages"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 提交修改到 GitHub Pages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notice2"><span class="nav-number">5.5.</span> <span class="nav-text">Notice2</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-搭建-Node-js-环境"><span class="nav-number">1.</span> <span class="nav-text">1. 搭建 Node.js 环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-搭建-Git-环境"><span class="nav-number">2.</span> <span class="nav-text">2. 搭建 Git 环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-GitHub配置"><span class="nav-number">3.</span> <span class="nav-text">3. GitHub配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-安装配置-Hexo"><span class="nav-number">4.</span> <span class="nav-text">4. 安装配置 Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Notice"><span class="nav-number">4.1.</span> <span class="nav-text">Notice</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-关联-Hexo-与-GitHub-Pages"><span class="nav-number">5.</span> <span class="nav-text">5. 关联 Hexo 与 GitHub Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-生成SSH-keys"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 生成SSH keys</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-添加-SSH-Key-到-GitHub"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 添加 SSH Key 到 GitHub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-配置Git个人信息及本地Deployment"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 配置Git个人信息及本地Deployment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-4-提交修改到-GitHub-Pages"><span class="nav-number">5.4.</span> <span class="nav-text">5.4 提交修改到 GitHub Pages</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notice2"><span class="nav-number">5.5.</span> <span class="nav-text">Notice2</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-GitHub-Pages-地址解析到个人域名"><span class="nav-number">6.</span> <span class="nav-text">6 GitHub Pages 地址解析到个人域名</span></a></li></ol></div>
             
 
           </div>
