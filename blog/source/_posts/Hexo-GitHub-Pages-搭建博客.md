@@ -206,7 +206,7 @@ Hexo原理就是hexo在执行hexo generate时会在本地先把博客生成的�
 然后，在本地博客存储根目录下的`source`文件夹内创建名为`CNAME`的文件，你可以创建一个文本文档，然后改名为`CNAME`即可，注意同时删去它的后缀。用记事本或其他编辑器打开它，输入你的域名，不能加`http://`或`https://`。
 
 以阿里云购买的为例，进入[域名解析控制台](https://dc.console.aliyun.com/dns/)，解析控制，添加解析
-！[alt 阿里云添加解析](http://p6bx8q1l3.bkt.clouddn.com//18-4-2/52401210.jpg)
+![alt 阿里云添加解析](http://p6bx8q1l3.bkt.clouddn.com//18-4-2/52401210.jpg)
 
  1. 记录类型选择CNAME
  2. 主机记录填www
@@ -220,7 +220,6 @@ Hexo原理就是hexo在执行hexo generate时会在本地先把博客生成的�
 
     ping tuliang1996.github.io
 
-！[alt 阿里云域名绑定](http://p6bx8q1l3.bkt.clouddn.com//18-4-2/81948236.jpg)
+![alt 阿里云域名绑定](http://p6bx8q1l3.bkt.clouddn.com//18-4-2/81948236.jpg)
 
 保存后，当你输入你所购买的域名（我的`tlight.site`)，或者GitHub Pages中的`github.io`域名（我的`tuliang1996.github.io`）均会跳转到`tlight.site`。相当于一个重定向的过程。（如果失败可以稍等几分钟之后重试）
-
