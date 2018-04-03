@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="救救自己。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="自言自语">
-<meta property="og:url" content="http://tlight.site/index.html">
+<meta name="description" content="本文旨在记录一下一些Git的入门指令。 Git 是一款免费的、开源的、分布式的版本控制系统。旨在快速高效地处理无论规模大小的任何软件工程。 每一个 Git克隆 都是一个完整的文件库，含有全部历史记录和修订追踪能力，不依赖于网络连接或中心服务器。其最大特色就是“分支”及“合并”操作非常快速、简便。 为什么要使用 GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 基本命令">
+<meta property="og:url" content="http://tlight.site/2018/04/03/Git-基本命令/index.html">
 <meta property="og:site_name" content="自言自语">
-<meta property="og:description" content="救救自己。">
+<meta property="og:description" content="本文旨在记录一下一些Git的入门指令。 Git 是一款免费的、开源的、分布式的版本控制系统。旨在快速高效地处理无论规模大小的任何软件工程。 每一个 Git克隆 都是一个完整的文件库，含有全部历史记录和修订追踪能力，不依赖于网络连接或中心服务器。其最大特色就是“分支”及“合并”操作非常快速、简便。 为什么要使用 GitHub">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-03T03:09:14.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自言自语">
-<meta name="twitter:description" content="救救自己。">
+<meta name="twitter:title" content="Git 基本命令">
+<meta name="twitter:description" content="本文旨在记录一下一些Git的入门指令。 Git 是一款免费的、开源的、分布式的版本控制系统。旨在快速高效地处理无论规模大小的任何软件工程。 每一个 Git克隆 都是一个完整的文件库，含有全部历史记录和修订追踪能力，不依赖于网络连接或中心服务器。其最大特色就是“分支”及“合并”操作非常快速、简便。 为什么要使用 GitHub">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://tlight.site/"/>
+  <link rel="canonical" href="http://tlight.site/2018/04/03/Git-基本命令/"/>
 
 
 
 
 
-  <title>自言自语</title>
+  <title>Git 基本命令 | 自言自语</title>
   
 
 
@@ -143,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -257,9 +257,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -289,9 +289,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/03/Git-基本命令/" itemprop="url">Git 基本命令</a></h1>
+          <h1 class="post-title" itemprop="name headline">Git 基本命令</h1>
         
 
         <div class="post-meta">
@@ -341,20 +339,56 @@
       
 
       
-        
-          <hr>
+        <hr>
 <p>本文旨在记录一下一些Git的入门指令。</p>
 <p>Git 是一款免费的、开源的、分布式的版本控制系统。旨在快速高效地处理无论规模大小的任何软件工程。</p>
 <p>每一个 Git克隆 都是一个完整的文件库，含有全部历史记录和修订追踪能力，不依赖于网络连接或中心服务器。其最大特色就是“分支”及“合并”操作非常快速、简便。</p>
 <p><a href="https://github.com/WD-iGaves/Mars.js/wiki/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8GITHUB%3F" target="_blank" rel="noopener">为什么要使用 GitHub</a></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/04/03/Git-基本命令/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<a id="more"></a>
+<hr>
+<h3 id="获取帮助"><a href="#获取帮助" class="headerlink" title="获取帮助"></a>获取帮助</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<h3 id="初始化一个仓库，或者克隆现有的仓库"><a href="#初始化一个仓库，或者克隆现有的仓库" class="headerlink" title="初始化一个仓库，或者克隆现有的仓库"></a>初始化一个仓库，或者克隆现有的仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/repository</span><br></pre></td></tr></table></figure>
+<p><code>git init</code>会初始化当前文件夹为git仓库，并生成<code>.git</code>目录。<br>如果你是初始化一个本地仓库且需要与远程仓库建立联系，那么你需要先创建一个repository（这一步在github网页上完成）。<br><code>git clone</code>会将url所在的仓库克隆到当前文件夹下。你也可以在url后面指定存放路径。</p>
+<h3 id="状态与暂存"><a href="#状态与暂存" class="headerlink" title="状态与暂存"></a>状态与暂存</h3><p>一般来说，文件有两种状态</p>
+<ul>
+<li>跟踪</li>
+<li>未跟踪</li>
+</ul>
+<p>我们可以输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p>来查看当前仓库文件的状态，它会反馈出你当前分支的状态，以及暂存区和为跟踪文件的状态。</p>
+<p>如果你仅仅克隆下来没做任何修改</p>
+<pre><code>nothing to commit, working directory clean
+</code></pre><p>如果你创建了新的文件或修改了文件，那么该文件会变成未跟踪状态</p>
+<pre><code>Untracked files:
+  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
+
+    Newfile
+
+nothing added to commit but untracked files present (use &quot;git add&quot; to track)
+</code></pre><p>我们可以把该文件添加到暂存区，使其变为跟踪状态，等待提交，通常可使用第二条指令，将当前文件夹内的所有文件全部存到暂存区。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add Newfile</span><br><span class="line">git add .</span><br></pre></td></tr></table></figure>
+<p>再次输入<code>git status</code>你会得到如下反馈</p>
+<pre><code>Changes to be committed:
+  (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
+
+    new file:   Newfile
+</code></pre><p>还有一种简便的方式是<code>git status -s</code>，将反馈简短的状态信息，其中<code>A</code>代表新增到暂存区还未提交的文件，<code>??</code>代表未跟踪的文件，<code>D</code>代表删除了的文件。</p>
+<h3 id="提交与推送"><a href="#提交与推送" class="headerlink" title="提交与推送"></a>提交与推送</h3><p>当你完成修改，并将所有修改提交到暂存区后，你可以提交到本地仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"commit message"</span></span><br></pre></td></tr></table></figure>
+<p><code>-m</code>为必要选项，附带上你修改文件后所要提交的说明信息。</p>
+<p>接下来你需要把你的提交推送到远程仓库。</p>
+<p>要查看当前配置有哪些远程仓库，可以用<code>git remote</code>命令，它会列出每个远程库的简短名字。在克隆完某个项目后，至少可以看到一个名为origin 的远程库，Git 默认使用这个名字来标识你所克隆的原始仓库。</p>
+<p>如果你是初始化了一个本地仓库，想要推送到远程仓库的话，你可以使用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;address&gt;</span><br></pre></td></tr></table></figure>
+<p>与远程仓库建立联系， <code>&lt;address&gt;</code>的格式为<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:username/repository.git`</p>
+<p>之后你需要先拉取远程仓库的更新</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
+<p>然后推送你的更新</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><p>基本的操作指令就是这些了，关于一些进阶的指令，请等待后续文章的更新。</p>
+<p>谢谢浏览~~</p>
+
       
     </div>
     
@@ -371,145 +405,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tlight.site/2018/03/29/Hexo-GitHub-Pages-搭建博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="涂亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://p6bx8q1l3.bkt.clouddn.com//18-4-2/51522892.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="自言自语">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/29/Hexo-GitHub-Pages-搭建博客/" itemprop="url">Hexo + GitHub Pages 搭建博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T10:56:09+08:00">
-                2018-03-29
-              </time>
+              <a href="/2018/03/29/Hexo-GitHub-Pages-搭建博客/" rel="next" title="Hexo + GitHub Pages 搭建博客">
+                <i class="fa fa-chevron-left"></i> Hexo + GitHub Pages 搭建博客
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <hr>
-<p>大概流程：</p>
-<ol>
-<li>搭建 Node.js 环境</li>
-<li>搭建 Git 环境</li>
-<li>GitHub配置</li>
-<li>安装配置 Hexo</li>
-<li>关联 Hexo 与 GitHub Pages</li>
-<li>GitHub Pages 地址解析到个人域名</li>
-</ol>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/29/Hexo-GitHub-Pages-搭建博客/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -519,134 +436,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tlight.site/2018/03/28/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="涂亮">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://p6bx8q1l3.bkt.clouddn.com//18-4-2/51522892.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="自言自语">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/28/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T16:00:12+08:00">
-                2018-03-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/28/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -654,6 +448,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -674,8 +472,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -721,6 +528,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取帮助"><span class="nav-number">1.</span> <span class="nav-text">获取帮助</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化一个仓库，或者克隆现有的仓库"><span class="nav-number">2.</span> <span class="nav-text">初始化一个仓库，或者克隆现有的仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态与暂存"><span class="nav-number">3.</span> <span class="nav-text">状态与暂存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交与推送"><span class="nav-number">4.</span> <span class="nav-text">提交与推送</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结尾"><span class="nav-number">5.</span> <span class="nav-text">结尾</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -861,6 +684,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
