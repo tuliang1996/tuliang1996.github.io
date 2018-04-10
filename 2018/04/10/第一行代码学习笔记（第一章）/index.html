@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="本文旨在记录我个人对于Android书籍第一行代码的学习过程。 文中内容皆摘取自书籍，并稍微经过个人润色。 原书地址">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一行代码学习笔记（第一章）">
+<meta property="og:url" content="http://tlight.site/2018/04/10/第一行代码学习笔记（第一章）/index.html">
+<meta property="og:site_name" content="自言自语">
+<meta property="og:description" content="本文旨在记录我个人对于Android书籍第一行代码的学习过程。 文中内容皆摘取自书籍，并稍微经过个人润色。 原书地址">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-10T06:36:25.941Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第一行代码学习笔记（第一章）">
+<meta name="twitter:description" content="本文旨在记录我个人对于Android书籍第一行代码的学习过程。 文中内容皆摘取自书籍，并稍微经过个人润色。 原书地址">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tlight.site/2018/04/10/第一行代码学习笔记（第一章）/"/>
+
+
+
+
+
+  <title>第一行代码学习笔记（第一章） | 自言自语</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">自言自语</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个拖延症患者的自我救赎</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tag" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tlight.site/2018/04/10/第一行代码学习笔记（第一章）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="涂亮">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://p6bx8q1l3.bkt.clouddn.com//18-4-2/51522892.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="自言自语">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">第一行代码学习笔记（第一章）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-10T14:30:37+08:00">
+                2018-04-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<p>本文旨在记录我个人对于Android书籍第一行代码的学习过程。</p>
+<p>文中内容皆摘取自书籍，并稍微经过个人润色。</p>
+<p><a href="https://book.douban.com/subject/25942191/" target="_blank" rel="noopener">原书地址</a></p>
+<a id="more"></a>
+<hr>
+<h3 id="intent-filter的作用"><a href="#intent-filter的作用" class="headerlink" title="intent-filter的作用"></a>intent-filter的作用</h3><p>打开AndroidManifest.xml文件，从中可以找到如下代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;activity android:name=&quot;.MainActivity&quot;&gt;</span><br><span class="line">    &lt;intent-filter&gt;</span><br><span class="line">        &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line">        &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">    &lt;/intent-filter&gt;</span><br><span class="line">&lt;/activity&gt;</span><br></pre></td></tr></table></figure>
+<p>这段代码表示对MainActivity这个活动进行注册，没有在AndroidManifest.xml里注册的活动是不能使用的。其中intent-filter里的两行代码表示MainActivity是这个项目的主活动，在手机上点击应用图标，首先启动的就是这个活动。</p>
+<h3 id="res-目录结构"><a href="#res-目录结构" class="headerlink" title="res 目录结构"></a>res 目录结构</h3><p>res目录结构：所有以drawable开头的文件夹都是用来放图片的，所有以mipmap开头的文件夹都是用来放应用图标的，所有以values开头的文件夹都是用来放字符串、样式、颜色等配置的，layout文件夹是用来放布局文件的。</p>
+<h3 id="资源文件的引用"><a href="#资源文件的引用" class="headerlink" title="资源文件的引用"></a>资源文件的引用</h3><p>打开res/values/strings.xml文件，内容如下所示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;resources&gt;</span><br><span class="line">    &lt;string name=&quot;app_name&quot;&gt;My Application&lt;/string&gt;</span><br><span class="line">&lt;/resources&gt;</span><br></pre></td></tr></table></figure>
+<p>这里定义了一个应用程序名的字符串，我们有以下两种方式来引用它。</p>
+<ol>
+<li>在代码中通过R.string.app_name可以获得该字符串的引用。</li>
+<li>在XML中通过@string/app_name可以获得该字符串的引用。</li>
+</ol>
+<p>基本的语法就是上面这两种方式，其中string部分是可以替换的，如果是引用的图片资源就可以替换成drawable，如果是引用的应用图标就可以替换成mipmap，如果是引用的布局文件就可以替换成layout，以此类推。</p>
+<p>下面举一个简单的例子来帮助你理解，打开AndroidManifest.xml文件，找到如下代码:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;application</span><br><span class="line">    android:allowBackup=&quot;true&quot;</span><br><span class="line">    android:icon=&quot;@mipmap/ic_launcher&quot;</span><br><span class="line">    android:label=&quot;@string/app_name&quot;</span><br><span class="line">    android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;</span><br><span class="line">    android:supportsRtl=&quot;true&quot;</span><br><span class="line">    android:theme=&quot;@style/AppTheme&quot;&gt;</span><br><span class="line">    &lt;activity android:name=&quot;.MainActivity&quot;&gt;</span><br><span class="line">        &lt;intent-filter&gt;</span><br><span class="line">            &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line"></span><br><span class="line">            &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">        &lt;/intent-filter&gt;</span><br><span class="line">    &lt;/activity&gt;</span><br><span class="line">&lt;/application&gt;</span><br></pre></td></tr></table></figure>
+<p>其中，项目的应用图标就是通过android:icon属性来指定的，应用的名称则是通过android:label属性指定的。</p>
+<h3 id="详解build-gradle文件"><a href="#详解build-gradle文件" class="headerlink" title="详解build.gradle文件"></a>详解build.gradle文件</h3><p>HelloWorld项目中有两个build.gradle文件，一个是在最外层目录下的，一个是在app目录下的。这两个文件对构建Android Studio项目都起到了至关重要的作用，下面我们就来对这两个文件中的内容进行详细的分析。<br>    先来看一下最外层目录下的build.gradle文件，代码如下所示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">buildscript &#123;</span><br><span class="line"></span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">    dependencies &#123;</span><br><span class="line">        classpath &apos;com.android.tools.build:gradle:3.0.1&apos;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        // NOTE: Do not place your application dependencies here; they belong</span><br><span class="line">        // in the individual module build.gradle files</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">allprojects &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        google()</span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task clean(type: Delete) &#123;</span><br><span class="line">    delete rootProject.buildDir</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>repositories闭包中都声明了jcenter()这行配置，它是一个代码托管仓库，很多Android开源项目都会选择将代码托管到jcenter上，声明了这行配置之后，我们就可以在项目中轻松引用任何jcenter上的开源项目了。</p>
+<p>dependencies闭包中使用classpath声明了一个Gradle插件。Gradle并不是专门为构建Android项目而开发的，Java、C++等很多种项目都可以使用Gradle来构建。因此如果我们要想使用它来构建Android项目，则需要声明com.android.tools.build:gradle : 3.0.1这个插件。其中，最后面的部分是插件的版号。</p>
+<p>最外层目录下的build.gradle文件分析完了，通常情况下你并不需要修改这个文件中的内容，除非你想添加一些全局的项目构建配置。</p>
+<p>下面我们再来看一下app目录下的build.gradle文件，代码如下所示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: &apos;com.android.application&apos;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion 24</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId &quot;com.example.tl.myapplication&quot;</span><br><span class="line">        minSdkVersion 15</span><br><span class="line">        targetSdkVersion 24</span><br><span class="line">        versionCode 1</span><br><span class="line">        versionName &quot;1.0&quot;</span><br><span class="line">        testInstrumentationRunner &quot;android.support.test.runner.AndroidJUnitRunner&quot;</span><br><span class="line">    &#125;</span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled false</span><br><span class="line">            proguardFiles getDefaultProguardFile(&apos;proguard-android.txt&apos;), &apos;proguard-rules.pro&apos;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(dir: &apos;libs&apos;, include: [&apos;*.jar&apos;])</span><br><span class="line">    implementation &apos;com.android.support:appcompat-v7:26.1.0&apos;</span><br><span class="line">    implementation &apos;com.android.support.constraint:constraint-layout:1.0.2&apos;</span><br><span class="line">    testImplementation &apos;junit:junit:4.12&apos;</span><br><span class="line">    androidTestImplementation &apos;com.android.support.test:runner:1.0.1&apos;</span><br><span class="line">    androidTestImplementation &apos;com.android.support.test.espresso:espresso-core:3.0.1&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第一行应用了一个插件，一般有两种值可选:<br>com.android.application表示这是一个应用程序模块。<br>com.android.library表示这是一个库模块。<br>应用程序模块和库模块的最大区别在于，一个是可以直接运行的，一个只能作为代码库依附于别的应用程序模块来运行。</p>
+<p>android闭包中可以配置项目构建的各种属性。其中，<br>compiteSdkVersion用于指定项目的编译版本，这里指定成24表示使用Android 7.0系统的SDK编译。<br>buildToolsVersion用于指定项目构建工具的版本，如果有更新的版本时，Android Studio会进行提示。</p>
+<p>在android闭包中又嵌套了一个defaultConfig闭包，defaultConfig闭包中可以对项目的更多细节进行配置。其中，<br>applicationId用于指定项目的包名，创建项目的时候已经指定过包名，如果你想在后面对其进行修改，那么就是在这里修改的。<br>minSdkVersion用于指定项目最低兼容的Android系统版本，这里指定成15表示最低兼容到 Android 4.0系统。<br>targetSdkVersion指定的值表示你在该目标版本上已经做过了充分的测试，系统将会为你的应用程序启用一些最新的功能和特性。比如说Android 6.0系统中引入了运行时权限这个功能，如果你将targetSdkVersion指定成23或者更高，那么系统就会为你的程序启用运行时权限功能，而如果你将targetSdkVersion指定成22，那么就说明你的程序最高只在 Android 5.1系统上做过充分的测试，Android 6.0系统中引入的新功能自然就不会启用了。<br>versionCode用于指定项目的版本号，versionName用于指定项目的版本名，这两个属性在生成安装文件的时候非常重要。</p>
+<p>buildTypes闭包用于指定生成安装文件的相关配置，通常只会有两个子闭包，一个是debug，一个是release。<br>debug闭包用于指定生成测试版安装文件的配置。<br>release闭包用于指定生成正式版安装文件的配置。<br>另外， debug闭包是可以忽略不写的。release闭包中的具体内容如下：<br>minifyEnabled用于指定是否对项目的代码进行混淆，true表示混淆，false表示不混淆。proguardFites用于指定混淆时使用的规则文件，这里指定了两个文件，第一个proguard-android.txt是在Android SDK目录下的，里面是所有项目通用的混淆规则，第二个proguard-rules.pro是在当前项目的根目录下的，里面可以编写当前项目特有的混淆规则。需要注意的是，通过Android Studio直接运行项目生成的都是测试版安装文件。</p>
+<p>dependencies闭包的功能非常强大，它可以指定当前项目所有的依赖关系。通常Android Studio项目一共有3种依赖方式:本地依赖、库依赖和远程依赖。<br>本地依赖可以对本地的Jar包或目录添加依赖关系。<br>库依赖可以对项目中的库模块添加依赖关系。<br>远程依赖则可以对jcenter库上的开源项目添加依赖关系。<br>第一行的compile fileTree就是一个本地依赖声明，它表示将libs目录下所有jar后缀的文件都添加到项目的构建路径当中。<br>第二行的compile则是远程依赖声明，com.android.support:appcompat-v7:24.2.1就是一个标准的远程依赖库格式， 其中com.android.support是域名部分，用于和其他公司的库做区分;appcompat-v7是组名称， 用于和同一个公司中不同的库做区分;24.2.1是版本号，用于和同一个库不同的版本做区分。加上这句声明后，Gradle在构建项目时会首先检查一下本地是否已经有这个库的缓存，如果没有的话则会去自动联网下载，然后再添加到项目的构建路径当中。<br>至于库依赖声明这里没有用到，它的基本格式是compile project后面加上要依赖的库名称，比如说有一个库模块的名字叫helper，那么添加这个库的依赖关系只需要加入compile project(‘: helper’)这句声明即可。<br>剩下的一句testCompile是用于声明测试用例库的。</p>
+<h3 id="使用Android的日志工具Log"><a href="#使用Android的日志工具Log" class="headerlink" title="使用Android的日志工具Log"></a>使用Android的日志工具Log</h3><p>Android中的日志工具类是Log(android.util.Log)，这个类中提供了如下5个方法来供我们打印日志。</p>
+<ol>
+<li>Log .v()。用于打印那些最为琐碎的、意义最小的日志信息。对应级别verbose，是Android日志里面级别最低的一种。</li>
+<li>Log .d()。用于打印一些调试信息，这些信息对你调试程序和分析问题应该是有帮助的。对应级别debug，比verbose高一级。</li>
+<li>Log .i()。用于打印一些比较重要的数据，这些数据应该是你非常想看到的、可以帮你分析用户行为数据。对应级别info，比debug高一级.</li>
+<li>Log.w()。用于打印一些警告信息，提示程序在这个地方可能会有潜在的风险，最好去修复一下这些出现警告的地方。对应级别warn，比info高一级。</li>
+<li>Log .e()。用于打印程序中的错误信息，比如程序进入到了catch语句当中。当有错误信息打印出来的时候，一般都代表你的程序出现严重问题了，必须尽快修复。对应级别error，比warn高一级。</li>
+</ol>
+<p>打开HelloWorldActivity，在onCreate()方法中添加一行打印日志的语句，如下所示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">protected void onCreate(Bundte savedInstanceState)&#123;</span><br><span class="line">      super.onCreate(savedInstanceState);</span><br><span class="line">      setContentView(R.layout.hello_world_layout);</span><br><span class="line">      Log.d(&quot;HelloWorldActivity&quot;, &quot;onCreate execute&quot;);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>Log .d()方法中传入了两个参数:第一个参数是tag，一般传入当前的类名好，主要用于对打印信息进行过滤;第二个参数是msg，即想要打印的具体的内容。</p>
+<p>快捷键输入：</p>
+<p>打印一条debug级别的日志，那么只需要输入logd，然后按下tab键，就会帮你自动补全一条完整的打印语句。输入logi，然后按下tab键，会自动补全一条info级别的打印日志。输入logew，按下tab键，会自动补全一条warn级别的打印日志，以此类推。另外，由于Log的所有打印方法都要求传入一个tag参数，每次写一遍显然太过麻烦。这里还有一个小技巧，我们在onCreate()方法的外面输入logt，然后按下tab键，这时就会以当前的类名作为值自动生成一个TAG常量，如下所示:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">private static final String TAG = &quot;HelloWorldActivity&quot;;</span><br></pre></td></tr></table></figure>
+<p>添加过滤器及使用日志控制级别：</p>
+<p>点击<code>Edit Filter Configuration</code>，可以针对tag名进行过滤。<br>日志控制级别即我们上面所提到的5类。<br>另外可以使用<code>Crtl + F</code>进行关键字过滤。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/03/Git-基本命令/" rel="next" title="Git 基本命令">
+                <i class="fa fa-chevron-left"></i> Git 基本命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://p6bx8q1l3.bkt.clouddn.com//18-4-2/51522892.jpg"
+                alt="涂亮" />
+            
+              <p class="site-author-name" itemprop="name">涂亮</p>
+              <p class="site-description motion-element" itemprop="description">救救自己。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#intent-filter的作用"><span class="nav-number">1.</span> <span class="nav-text">intent-filter的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#res-目录结构"><span class="nav-number">2.</span> <span class="nav-text">res 目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源文件的引用"><span class="nav-number">3.</span> <span class="nav-text">资源文件的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#详解build-gradle文件"><span class="nav-number">4.</span> <span class="nav-text">详解build.gradle文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Android的日志工具Log"><span class="nav-number">5.</span> <span class="nav-text">使用Android的日志工具Log</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">涂亮</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

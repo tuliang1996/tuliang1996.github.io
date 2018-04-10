@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="自言自语">
 <meta property="og:description" content="本文旨在记录一下一些Git的入门指令。 Git 是一款免费的、开源的、分布式的版本控制系统。旨在快速高效地处理无论规模大小的任何软件工程。 每一个 Git克隆 都是一个完整的文件库，含有全部历史记录和修订追踪能力，不依赖于网络连接或中心服务器。其最大特色就是“分支”及“合并”操作非常快速、简便。 为什么要使用 GitHub">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-03T03:09:14.536Z">
+<meta property="og:updated_time" content="2018-04-10T06:41:02.616Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 基本命令">
 <meta name="twitter:description" content="本文旨在记录一下一些Git的入门指令。 Git 是一款免费的、开源的、分布式的版本控制系统。旨在快速高效地处理无论规模大小的任何软件工程。 每一个 Git克隆 都是一个完整的文件库，含有全部历史记录和修订追踪能力，不依赖于网络连接或中心服务器。其最大特色就是“分支”及“合并”操作非常快速、简便。 为什么要使用 GitHub">
@@ -381,8 +381,9 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <p>要查看当前配置有哪些远程仓库，可以用<code>git remote</code>命令，它会列出每个远程库的简短名字。在克隆完某个项目后，至少可以看到一个名为origin 的远程库，Git 默认使用这个名字来标识你所克隆的原始仓库。</p>
 <p>如果你是初始化了一个本地仓库，想要推送到远程仓库的话，你可以使用</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin &lt;address&gt;</span><br></pre></td></tr></table></figure>
-<p>与远程仓库建立联系， <code>&lt;address&gt;</code>的格式为<a href="mailto:`git@github.com" target="_blank" rel="noopener">`git@github.com</a>:username/repository.git`</p>
-<p>之后你需要先拉取远程仓库的更新</p>
+<p>与远程仓库建立联系， <code>&lt;address&gt;</code>的格式为</p>
+<pre><code>git@github.com:username/repository.git
+</code></pre><p>之后你需要先拉取远程仓库的更新</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories</span><br></pre></td></tr></table></figure>
 <p>然后推送你的更新</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
@@ -421,6 +422,10 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/10/第一行代码学习笔记（第一章）/" rel="prev" title="第一行代码学习笔记（第一章）">
+                第一行代码学习笔记（第一章） <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -501,7 +506,7 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
