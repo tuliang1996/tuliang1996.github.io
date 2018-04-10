@@ -99,7 +99,9 @@ Git 是一款免费的、开源的、分布式的版本控制系统。旨在快�
     git remote add origin <address>
 ```
 
-与远程仓库建立联系， `<address>`的格式为`git@github.com:username/repository.git`
+与远程仓库建立联系， `<address>`的格式为
+
+    git@github.com:username/repository.git
 
 之后你需要先拉取远程仓库的更新
 
