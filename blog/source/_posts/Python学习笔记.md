@@ -1,5 +1,5 @@
 ---
-title: Pythoon学习笔记
+title: Python学习笔记
 date: 2018-05-09 10:24:33
 tags:
 ---
