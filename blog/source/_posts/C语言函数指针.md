@@ -5,33 +5,33 @@
     （整个函数指针变量的声明格式如同函数myFun的声明处一样，只不过——我们把myFun改成（*funP）而已，这样就有了一个能指向myFun函数的指针了。当然，这个funP指针变量也可以指向所有其它具有相同参数及返回值的函数。）
    
 ...
-void (*funP)(int);   //函数指针的声明，也可写成void(*funP)(int x)，但习惯上一般不这样。
-void (*funA)(int);
-void myFun(int x);   //函数的声明，也可写成：void myFun( int );
-int main()
-{
-    //一般的函数调用
-    myFun(100);
-    
-    //myFun与funP的类型关系类似于int 与int *的关系。
-    funP=&myFun;  //将myFun函数的地址赋给funP变量
-    (*funP)(200);  //通过函数指针变量来调用函数
-    
-    //myFun与funA的类型关系类似于int 与int 的关系。
-    funA=myFun;
-    funA(300);
-    
-    //三个貌似错乱的调用
-    funP(400);
-    (*funA)(600);
-    (*myFun)(1000);
-    return 0;
-}
+     void (*funP)(int);   //函数指针的声明，也可写成void(*funP)(int x)，但习惯上一般不这样。
+     void (*funA)(int);
+     void myFun(int x);   //函数的声明，也可写成：void myFun( int );
+     int main()
+     {
+         //一般的函数调用
+         myFun(100);
 
-void myFun(int x)
-{
-    printf("myFun: %d\n",x);
-}
+         //myFun与funP的类型关系类似于int 与int *的关系。
+         funP=&myFun;  //将myFun函数的地址赋给funP变量
+         (*funP)(200);  //通过函数指针变量来调用函数
+
+         //myFun与funA的类型关系类似于int 与int 的关系。
+         funA=myFun;
+         funA(300);
+
+         //三个貌似错乱的调用
+         funP(400);
+         (*funA)(600);
+         (*myFun)(1000);
+         return 0;
+     }
+
+     void myFun(int x)
+     {
+         printf("myFun: %d\n",x);
+     }
 ...
 
 总结：
@@ -43,22 +43,22 @@ void myFun(int x)
 6、函数指针变量也可以存入一个数组内。数组的声明方法：int (*fArray[10]) ( int );
 
 ...
-void (*funP)(int);
-void (*funA)(int);
-void myFun(int x);
-int main()
-{
-    funP=&myFun;
-    printf("myFun\t 0x%p=0x%p\n",&myFun,myFun);
-    printf("funP\t 0x%p=0x%p\n",&funP,funP);
-    printf("funA\t 0x%p=0x%p\n",&funA,funA);
-    return 0;
-}
+     void (*funP)(int);
+     void (*funA)(int);
+     void myFun(int x);
+     int main()
+     {
+         funP=&myFun;
+         printf("myFun\t 0x%p=0x%p\n",&myFun,myFun);
+         printf("funP\t 0x%p=0x%p\n",&funP,funP);
+         printf("funA\t 0x%p=0x%p\n",&funA,funA);
+         return 0;
+     }
 
-void myFun(int x)
-{
-    printf("myFun: %d\n",x);
-}
+     void myFun(int x)
+     {
+         printf("myFun: %d\n",x);
+     }
 ...
 
 总结：
